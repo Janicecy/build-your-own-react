@@ -1,4 +1,4 @@
-import Didact from './Didact-createElement'
+import Didact from './Didact-concurrent'
 
 /** @jsx Didact.createElement */
 const element = (
