@@ -1,4 +1,4 @@
-import Didact from './Didact-render&commit'
+import Didact from './Didact-reconciliation'
 
 /** @jsx Didact.createElement */
 const element = (
