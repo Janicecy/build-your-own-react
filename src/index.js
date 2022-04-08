@@ -1,4 +1,4 @@
-import Didact from './Didact-reconciliation'
+import Didact from './Didact-FC'
 
 /** @jsx Didact.createElement */
 const element = (
@@ -7,5 +7,15 @@ const element = (
     <h2 style="text-align:right">from Didact</h2>
   </div>
 );
+
+function App(props) {
+  return (
+    <div style="background: salmon">
+      <h1>Hello {props.name}</h1>
+      <h2 style="text-align:right">from Didact FC</h2>
+    </div>
+  );
+}
+
 const container = document.getElementById("root");
-Didact.render(element, container);
+Didact.render(<App name='developer' />, container);
