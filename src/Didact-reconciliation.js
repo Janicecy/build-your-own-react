@@ -12,7 +12,7 @@ function workLoop(deadline) {
 
   while (nextUnitOfWork && !shouldYield) {
     nextUnitOfWork = performUnitOfWork(nextUnitOfWork)
-    shouldYield = deadline.timeRemaining < 1
+    shouldYield = deadline.timeRemaining() < 1
   }
 
   if (!nextUnitOfWork && wipRoot) {
@@ -128,7 +128,7 @@ function performUnitOfWork(fiber) {
 }
 
 function reconcileChildren(wipFiber, children) {
-  const oldFiber = wipFiber.alternate && wipFiber.alternate.child
+  let oldFiber = wipFiber.alternate && wipFiber.alternate.child
 
   let index = 0
   let prevSibling = null

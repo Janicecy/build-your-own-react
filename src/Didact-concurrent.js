@@ -7,7 +7,7 @@ function workLoop(deadline) {
 
   while (nextUnitOfWork && !shouldYield) {
     nextUnitOfWork = performUnitOfWork(nextUnitOfWork)
-    shouldYield = deadline.timeRemaining < 1
+    shouldYield = deadline.timeRemaining() < 1
   }
   requestIdleCallback(workLoop)
 }
